@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-Based Document Similarity Tool</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- <script src="{{ url_for('static', filename='jquery-3.5.1.min.js') }}"></script> -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="header">
+        <h2 style="color: #f6f6f2;">Web-Based Document Similarity Tool</h2>
+        <div class="header-menu">
+            <div class="dropdown">
+                <p class="dropdown-toggle" id="menu-header-link">Algorithms</p>
+                <div class="dropdown-menu">
+                    <a href="#">Cosine Similarity</a>
+                    <a href="#">TF-IDF Vectorizer</a>
+                    <a href="#">PyTesseract</a>
+                </div>
+            </div>
+            <a href="#" id="menu-header-link">About</a>
+            <a href="#" id="menu-header-link">Contact Us</a>
+        </div>
+    </div>
+    <center><h1 style="font-size: large; line-height: 2; color: white; font-size: larger; font-weight: bolder;">Welcome to our Document Similarity and Retrieval tool!<br>We offer three powerful options to meet your document analysis needs</h1></center>
+    <div class="option-container">
+        <div class="option1-intro">
+            <div>
+                <b>Option 1: "Doc vs. Multi"</b><br><br>
+                <p>This option allows you to compare one specific document against a set of multiple documents. Simply input your primary document, and our system will efficiently analyze its similarities and differences with each document in the subsequent input. It's a straightforward way to assess how a single document aligns with a batch of others.</p>
+            </div>
+            <a href="{{ url_for('docvsmulti') }}" style="text-decoration: none; color: white;"><div class="option-1" id="option1">
+                <small>Doc vs. Multi</small>
+            </div></a>
+        </div>
+        <div class="option2-intro">
+            <div>
+                <b>Option 2: "Multi-File Matrix"</b><br><br>
+                <p>With this feature, you can input multiple files, and our system will perform a comprehensive comparison. Each file is compared against every other file, creating a matrix-like table that highlights the relationships and similarities between all the files. It's an efficient way to analyze the pairwise document similarities within a set of multiple files, offering a holistic view of their relationships.</p>
+            </div>
+            <a href="{{ url_for('multifile') }}" style="text-decoration: none; color: white;"><div class="option-2" id="option2">
+                <small>Multi-File Matrix</small>
+            </div></a>
+        </div>
+        <div class="option3-intro">
+            <div>
+                <b>Option 3: "Document Retrieval"</b><br><br>
+                <p>"Document Retrieval" simplifies the search process within a designated directory. By selecting a directory, the system thoroughly scans and explores the content of each document within. This feature streamlines the process of locating specific information or patterns within a directory, providing a convenient and effective means of retrieving relevant documents based on their content.</p>
+            </div>
+            <a href="{{ url_for('docretrieval') }}" style="text-decoration: none; color: white;"><div class="option-3">
+                <center><small>Document Retrieval</small></center>
+            </div></a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Web-Based Document Similarity Tool Using TF-IDF and Cosine Similarity Algorithm</p>
+    </footer>
+</body>
+</html>

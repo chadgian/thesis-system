@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-Based Document Similarity Tool</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- <script src="{{ url_for('static', filename='jquery-3.5.1.min.js') }}"></script> -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="header">
+        <h2 style="color: #f6f6f2;">Web-Based Document Similarity Tool</h2>
+        <div class="header-menu">
+            <div class="dropdown">
+                <p class="dropdown-toggle" id="menu-header-link">Algorithms</p>
+                <div class="dropdown-menu">
+                    <a href="#">Cosine Similarity</a>
+                    <a href="#">TF-IDF Vectorizer</a>
+                    <a href="#">PyTesseract</a>
+                </div>
+            </div>
+            <a href="#" id="menu-header-link">About</a>
+            <a href="#" id="menu-header-link">Contact Us</a>
+        </div>
+    </div>
+    <div class="option1-container">
+        <h2 style="text-align: center;">Doc vs. Multi</h2>
+        <label for="document">Select a Document:</label>
+        <input type="file" id="document" name="document" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.gif,.webp,.tiff,.ppm,.pgm,.pbm" required><br><br>
+        <label for="documents">Select Multiple Documents to Compare:</label>
+        <input type="file" id="documents" name="documents" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.gif,.webp,.tiff,.ppm,.pgm,.pbm" multiple required><br><br>
+        <div style="height: 2em;">
+            <center><input type="submit" id="upload-button" value="Compare" onclick="firstOption()">
+            <div id="loading" style="display:none;">
+                <div class="loader"><img src="{{ url_for('static', filename='img/loading.png') }}" alt="Menu" width="25px" length="25px" style="margin: 0;"></div>
+            </div></center>
+        </div><br>
+        <table>
+            <thead>
+                <tr>
+                    <th style="position: 'relative'; text-align: center; width: 35%; padding: 0px;">
+                        <div id="filename" onclick="whatFilename()">
+                            <b>Filename</b>
+                        </div>
+                        <div id="not-filename" onclick="whatFilename()" style="display: none;">
+                            <b>Not filename</b>
+                        </div>
+                    </th>
+                    <th style="text-align: center; width: 50%; padding: 0px;"><small style="text-align: left;">Similarity rate with</small><br><p id="single-file"></p></th>
+                    <th style="padding-bottom: 0px;">
+                        <small>Status</small>
+                        <p id="status">
+                            <img src="{{ url_for('static', filename='img/extracting.gif') }}" style="display: none; width: 3em; margin: 0 auto;" id="extracting">
+                            <img src="{{ url_for('static', filename='img/pending.gif') }}" style="display: none; width: 3em; margin: 0 auto;" id="pending">
+                            <img src="{{ url_for('static', filename='img/finished.png') }}" style="display: none; width: 3em; margin: 0 auto;" id="finished">
+                        </p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="file-list">
+                <!-- Where the list of files will e displayed -->
+            </tbody>
+        </table>
+        <a href="{{ url_for('home') }}" style="text-decoration: none; color: white;"><div class="option-back">
+            <small>Back</small>
+        </div></a>
+    </div>
+    <footer>
+        <p>&copy; 2023 Web-Based Document Similarity Tool Using TF-IDF and Cosine Similarity Algorithm</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-Based Document Similarity Tool</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='option3.js') }}"></script>
+</head>
+<body>
+    <div class="header">
+        <h2 style="color: #f6f6f2;">Web-Based Document Similarity Tool</h2>
+        <div class="header-menu">
+            <div class="dropdown">
+                <p class="dropdown-toggle" id="menu-header-link">Algorithms</p>
+                <div class="dropdown-menu">
+                    <a href="#">Cosine Similarity</a>
+                    <a href="#">TF-IDF Vectorizer</a>
+                    <a href="#">PyTesseract</a>
+                </div>
+            </div>
+            <a href="#" id="menu-header-link">About</a>
+            <a href="#" id="menu-header-link">Contact Us</a>
+        </div>
+    </div>
+    <div class="option3-container">
+        <h2 style="text-align: center;">Document Retrieval</h2>
+        <div class="option3-upload">
+            <div style="flex: 1;">
+                <label for="thirdDocuments">Select Directory:</label>
+                <input type="file" id="thirdDocuments" name="thirdDocuments" directory="" webkitdirectory="" mozdirectory="" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.gif,.webp,.tiff,.ppm,.pgm,.pbm" multiple required><br><br>
+                <input type="submit" value="Upload" id="thirdButton" onclick="thirdFeature()">
+            </div>
+            <div class="file-explorer" style="flex: 1;">
+                <center><h3 id="root">Selected Folder</h3></center>
+                <div id="list-files">
+    
+                </div>
+            </div>
+        </div>
+        <div class="option3-search" >
+            <div style="flex: 1;">
+                <h3>Search Content</h3>
+                <input type="text" id="keyword"><br><br>
+                <input type="submit" value="Search" onclick="searchContent()">
+            </div>
+            <div class="result" style="flex: 1;">
+                <center>
+                    <h3>Search Result</h3>
+                </center>
+                <div id="result">
+                    <!-- <p>Hello</p> -->
+                </div>
+            </div>
+        </div>
+        <a href="{{ url_for('home') }}" style="text-decoration: none; color: white;"><div class="option-back">
+            <small>Back</small>
+        </div></a>
+    </div>
+    <footer>
+        <p>&copy; 2023 Web-Based Document Similarity Tool Using TF-IDF and Cosine Similarity Algorithm</p>
+    </footer>
+</body>
+</html>
