@@ -11,12 +11,9 @@ from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 from pdf2image import convert_from_path
 from flask import Flask, request, render_template, render_template_string, jsonify
-# import docx2pdf
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import string
-# import pythoncom
-#import aspose.words as aw
 
 # pytesseract.pytesseract.tesseract_cmd = r'libraries\Tesseract-OCR\tesseract.exe'
 poppler_path = r"libraries\poppler-0.68.0\bin"
