@@ -15,7 +15,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import string
 
-# pytesseract.pytesseract.tesseract_cmd = r'libraries\Tesseract-OCR\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = r'libraries\Tesseract-OCR\tesseract.exe'
 poppler_path = r"libraries\poppler-0.68.0\bin"
 
 app = Flask(__name__)
