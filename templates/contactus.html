@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-Based Document Similarity Tool</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="header">
+        <h2><a href="{{ url_for('home') }}" style="text-decoration: none; color: #f6f6f2;">Web-Based Document Similarity Tool</a></h2>
+        <div class="header-menu">
+            <div class="dropdown">
+                <a class="dropdown-toggle" id="menu-header-link">Algorithms</a>
+                <div class="dropdown-menu">
+                    <a href="{{ url_for('cosine') }}">Cosine Similarity</a>
+                    <a href="{{ url_for('tfidf') }}">TF-IDF Vectorizer</a>
+                </div>
+            </div>
+            <a href="{{ url_for('about') }}" id="menu-header-link">About</a>
+            <a href="{{ url_for('contactus') }}" id="menu-header-link">Contact Us</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Web-Based Document Similarity Tool Using TF-IDF and Cosine Similarity Algorithm</p>
+    </footer>
+</body>
+</html>

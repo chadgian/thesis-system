@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-Based Document Similarity Tool</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="header">
+        <h2><a href="{{ url_for('home') }}" style="text-decoration: none; color: #f6f6f2;">Web-Based Document Similarity Tool</a></h2>
+        <div class="header-menu">
+            <div class="dropdown">
+                <a class="dropdown-toggle" id="menu-header-link">Algorithms</a>
+                <div class="dropdown-menu">
+                    <a href="{{ url_for('cosine') }}">Cosine Similarity</a>
+                    <a href="{{ url_for('tfidf') }}">TF-IDF Vectorizer</a>
+                </div>
+            </div>
+            <a href="{{ url_for('about') }}" id="menu-header-link">About</a>
+            <a href="{{ url_for('contactus') }}" id="menu-header-link">Contact Us</a>
+        </div>
+    </div>
+    <center><div class="cosine-body">
+        <h1>What is Cosine Similarity?</h1>
+        <p>Cosine similarity is a measurement that quantifies the similarity between two or more vectors. 
+            It's the cosine of the angle between vectors or documents in this case, which are typically non-zero and within an 
+            inner product space. <a href="https://builtin.com/machine-learning/cosine-similarity">[1]</a></p>
+        <div style="width: 90%; margin-left: auto; margin-right: auto;">
+            <h3>Application of Cosine Similarity:</h3>
+            <ul>
+                <li><b>Document Representation</b></li>
+                    <ul>
+                        <li>
+                            Documents, in the context of our web app, are transformed into numerical vectors 
+                            in a high-dimensional space. Each dimension represents a unique term or word found 
+                            in the corpus of documents.
+                        </li>
+                    </ul>
+                <li><b>Text Vectorization</b></li>
+                    <ul>
+                        <li>
+                            Text vectorization is the process of converting textual data into a format 
+                            suitable for mathematical analysis. Methods like TF-IDF are employed to 
+                            create numerical representations of documents, facilitating comparison.
+                        </li>
+                    </ul>
+                <li><b>Cosine Similarity as a Measure</b></li>
+                    <ul>
+                        <li>
+                            Cosine Similarity is a metric used to quantify the similarity between two vectors. 
+                            In document similarity analysis, it measures the cosine of the angle between the 
+                            vectors, providing a reliable measure of content similarity.
+                        </li>
+                    </ul>
+                <li><b>Document Matching</b></li>
+                    <ul>
+                        <li>
+                            The primary goal in document similarity analysis is to find documents 
+                            that are most similar to a reference document. Cosine Similarity plays 
+                            a key role in ranking and identifying such documents based on their content similarity.
+                        </li>
+                    </ul>
+                <li><b>Information Retrieval</b></li>
+                    <ul>
+                        <li>
+                            In information retrieval systems, 
+                            Cosine Similarity is instrumental 
+                            in retrieving relevant documents from a large dataset. 
+                            It ensures that documents with similar content are prioritized in the search results.
+                        </li>
+                    </ul>
+                <li><b>Search Engines</b></li>
+                    <ul>
+                        <li>
+                            Search engines leverage Cosine Similarity to 
+                            improve the accuracy of search results. By considering 
+                            the content similarity between user queries and documents, 
+                            search engines can provide more relevant and useful results.
+                        </li>
+                    </ul>
+                <li><b>Document Clustering</b></li>
+                    <ul>
+                        <li>
+                            Cosine Similarity is applied in document clustering to group 
+                            together documents with similar content. This aids in organizing 
+                            large datasets and enables efficient analysis of related documents.
+                        </li>
+                    </ul>
+                <li><b>Recommendation Systems</b></li>
+                    <ul>
+                        <li>
+                            In recommendation systems, Cosine Similarity is utilized to suggest 
+                            documents that are similar to a user's preferences. This approach 
+                            enhances user experience by offering content that aligns with their interests.
+                        </li>
+                    </ul>
+                <li><b>Real World Examples</b></li>
+                    <ul>
+                        <li>
+                            Real-world examples showcase the practical benefits of document 
+                            similarity analysis using Cosine Similarity. Whether in academic 
+                            research, content curation, or business intelligence, this approach 
+                            has proven valuable in various domains.
+                        </li>
+                    </ul>
+            </ul>
+        </div>
+    </div></center>
+    <footer>
+        <p>&copy; 2023 Web-Based Document Similarity Tool Using TF-IDF and Cosine Similarity Algorithm</p>
+    </footer>
+</body>
+</html>

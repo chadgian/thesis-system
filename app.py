@@ -36,6 +36,22 @@ def multifile():
 def docretrieval():
     return render_template('option3.html')
 
+@app.route('/cosine')
+def cosine():
+    return render_template('cosine.html')
+
+@app.route("/tfidf")
+def tfidf():
+    return render_template('tfidf.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/contactus')
+def contactus():
+    return render_template('contactus.html')
+
 @app.route('/calculate', methods=['POST'])
 def calculate():
     if 'file' in request.files:
@@ -187,6 +203,7 @@ def extractPDF(file):
     pdf_file = open(file, 'rb')
     pages = convert_from_path(file, poppler_path=poppler_path)
     for i in range(len(pages)):
+        print(f"page {i}")
         image_data = pages[i].tobytes()
         text = pytesseract.image_to_string(Image.frombytes(pages[i].mode, pages[i].size, image_data))
         doc += text
@@ -220,10 +237,10 @@ def cosTFID(doc1, doc2):
     cosine_similarities = cosine_similarity(tfidf_matrix, tfidf_matrix)
     return f'{round(cosine_similarities[0][1]*100, 2)}%'
 
-# def get_local_ip():
-#     hostname = socket.gethostname()
-#     local_ip = socket.gethostbyname(hostname)
-#     return local_ip
+def get_local_ip():
+    hostname = socket.gethostname()
+    local_ip = socket.gethostbyname(hostname)
+    return local_ip
 
 if __name__ == "__main__"   :
-    app.run(host="0.0.0.0", port="5000")
+    app.run(host=get_local_ip(), port="5000")

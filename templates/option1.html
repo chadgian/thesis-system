@@ -13,23 +13,25 @@
         <h2 style="color: #f6f6f2;">Web-Based Document Similarity Tool</h2>
         <div class="header-menu">
             <div class="dropdown">
-                <p class="dropdown-toggle" id="menu-header-link">Algorithms</p>
+                <a class="dropdown-toggle" id="menu-header-link">Algorithms</a>
                 <div class="dropdown-menu">
-                    <a href="#">Cosine Similarity</a>
-                    <a href="#">TF-IDF Vectorizer</a>
-                    <a href="#">PyTesseract</a>
+                    <a href="{{ url_for('cosine') }}">Cosine Similarity</a>
+                    <a href="{{ url_for('tfidf') }}">TF-IDF Vectorizer</a>
                 </div>
             </div>
-            <a href="#" id="menu-header-link">About</a>
-            <a href="#" id="menu-header-link">Contact Us</a>
+            <a href="{{ url_for('about') }}" id="menu-header-link">About</a>
+            <a href="{{ url_for('contactus') }}" id="menu-header-link">Contact Us</a>
         </div>
     </div>
     <div class="option1-container">
         <h2 style="text-align: center;">Doc vs. Multi</h2>
-        <label for="document">Select a Document:</label>
-        <input type="file" id="document" name="document" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.gif,.webp,.tiff,.ppm,.pgm,.pbm" required><br><br>
-        <label for="documents">Select Multiple Documents to Compare:</label>
-        <input type="file" id="documents" name="documents" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.gif,.webp,.tiff,.ppm,.pgm,.pbm" multiple required><br><br>
+        <div style="display: flex; gap: 10px;">
+            <label for="document">Select a Document:</label>
+            <input type="file" id="document" name="document" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.gif,.webp,.tiff,.ppm,.pgm,.pbm" required><br><br>
+            <label for="documents">Select Multiple Documents to Compare:</label>
+            <input type="file" id="documents" name="documents" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.gif,.webp,.tiff,.ppm,.pgm,.pbm" multiple required>
+        </div>
+        <br><br>
         <div style="height: 2em;">
             <center><input type="submit" id="upload-button" value="Compare" onclick="firstOption()">
             <div id="loading" style="display:none;">
@@ -62,7 +64,7 @@
                 <!-- Where the list of files will e displayed -->
             </tbody>
         </table>
-        <a href="{{ url_for('home') }}" style="text-decoration: none; color: white;"><div class="option-back">
+        <div class="option-back" onclick="goBack()">
             <small>Back</small>
         </div></a>
     </div>

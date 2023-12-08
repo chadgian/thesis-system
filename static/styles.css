@@ -9,6 +9,7 @@ body {
 .header {
     background-color: #05174748;
     padding: 10px;
+    padding-top: 20px;
     display: flex;
     justify-content: space-between; /* Align elements at opposite ends */
     align-items: center; /* Center vertically */
@@ -68,10 +69,10 @@ body {
 
 @keyframes moveDown {
     from {
-        transform: translateY(-20px);
+        transform: translateY(-10px);
     }
     to {
-        transform: translateY(-5px);
+        transform: translateY(5px);
     }
 }
 
@@ -121,7 +122,8 @@ label {
 input[type="file"] {
     border: 1px solid #ccc;
     padding: 10px;
-    width: 95%;
+    width: 40%;
+    border-radius: 10px;
 }
 input[type="submit"] {
     background-color: #535f80;
@@ -155,14 +157,14 @@ input[type="submit"]:hover {
 .option1-container th, td {
     padding: 15px;
     border-bottom: 1px solid #bcc2d5;
-    background-color: #dbe4ff80;
+    background-color: #dbe4ff00;
     overflow: auto;
 /*    text-overflow: ellipsis;*/
 }
 
-.option1-container tr:hover {
+/* .option1-container tr:hover {
     background-color: #dbe4ffd3;
-}
+} */
 
 .loader {
   -webkit-animation: spin 1s linear infinite; /* Safari */
@@ -431,4 +433,19 @@ input[type="submit"]:hover {
 /* Style for the input type text when focused */
 #keyword:focus {
     border-color: #051747; /* Highlight border color when focused */
+}
+
+.cosine-body {
+    background-color: #d6ddf1;
+    margin: 20px;
+    width: 80%;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+}
+.cosine-body p {
+    font-size: 18px;
+    font-style: 'Verdana', sans-serif;
+    text-indent: 2em;
+    line-height: 2;
 }
