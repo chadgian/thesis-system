@@ -25,7 +25,7 @@
     </div>
     <center><h1 style="font-size: large; line-height: 2; color: white; font-size: larger; font-weight: bolder;">Welcome to our Document Similarity and Retrieval tool!<br>We offer three powerful options to meet your document analysis needs</h1></center>
     <div class="option-container">
-        <div class="option1-intro">
+        <!-- <div class="option1-intro">
             <div>
                 <b>Option 1: "Doc vs. Multi"</b><br><br>
                 <p>This option allows you to compare one specific document against a set of multiple documents. Simply input your primary document, and our system will efficiently analyze its similarities and differences with each document in the subsequent input. It's a straightforward way to assess how a single document aligns with a batch of others.</p>
@@ -51,7 +51,11 @@
             <div class="option-3" onclick='whatFeature("three")'>
                 <small>Document Retrieval</small>
             </div>
-        </div>
+        </div> -->
+
+        <img src="{{url_for('static', filename='img/DocvsMulti.png')}}" alt="" width="25%" height="25%" onclick='whatFeature("one")'>
+        <img src="{{url_for('static', filename='img/multi-file.png')}}" alt="" width="25%" height="25%" onclick='whatFeature("two")'>
+        <img src="{{url_for('static', filename='img/document-retrieval.png')}}" alt="" width="25%" height="25%" onclick='whatFeature("three")'>
     </div>
     <footer>
         <p>&copy; 2023 Web-Based Document Similarity Tool Using TF-IDF and Cosine Similarity Algorithm</p>

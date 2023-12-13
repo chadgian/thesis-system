@@ -25,11 +25,11 @@
     </div>
     <div class="option2-container">
         <h2 style="text-align: center;">Multi-Flex Matrix</h2>
-
+        <center>
         <label for="secondDocuments">Select Multiple Documents to Compare:</label>
         <input type="file" id="secondDocuments" name="secondDocuments" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.gif,.webp,.tiff,.ppm,.pgm,.pbm" multiple required><br><br>
 
-        <center>
+        
             <input type="submit" id="upload-button" value="Compare" onclick="secondOption()">
             <div id="loading" style="display:none;">
                 <div class="loader"><img src="{{ url_for('static', filename='img/loading.png') }}" alt="Menu" width="25px" length="25px" style="margin: 0;"></div>

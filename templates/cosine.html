@@ -24,10 +24,10 @@
     </div>
     <center><div class="cosine-body">
         <h1>What is Cosine Similarity?</h1>
-        <p>Cosine similarity is a measurement that quantifies the similarity between two or more vectors. 
+        <p class="cosine-intro">Cosine similarity is a measurement that quantifies the similarity between two or more vectors. 
             It's the cosine of the angle between vectors or documents in this case, which are typically non-zero and within an 
-            inner product space. <a href="https://builtin.com/machine-learning/cosine-similarity">[1]</a></p>
-        <div style="width: 90%; margin-left: auto; margin-right: auto;">
+            inner product space. <a href="#Built In" >[1]</a></p>
+        <div style="max-width: 90%; margin-left: auto; margin-right: auto;">
             <h3>Application of Cosine Similarity:</h3>
             <ul>
                 <li><b>Document Representation</b></li>
@@ -106,7 +106,60 @@
                         </li>
                     </ul>
             </ul>
+            <div style="font-size: 16px;">
+                <h3>Mathematical Representation:</h3>
+                <p style="line-height: 1;">Formula: </p>
+                <p><img src="{{ url_for('static', filename='img/formula-cosine.png') }}" alt="Cosine Similarity Formula" 
+                    max-width="30%" height="auto"></p>
+                <p><u>Example:</u></p>
+                <p>Consider two documents:</p><p>Doc1 = "This is the first example of document"</p><p>Doc2 = "Second document is this sentence"</p>
+                <p>Before calculating for the similarity, the two documents will first be vectorized using Count Vectorizer. 
+                    <i>The CountVectorizer is a valuable utility offered by the scikit-learn library in Python, 
+                    proves effective in converting a given text into a vector, considering the frequency (count) 
+                    of each word present in the entire text. <a href="#GeeksforGeeks">[2]</a></i>
+                </p>
+                <p style="text-align: center;"><small>Count Vectorizer Table of Doc1 and Doc2</small><img src="{{ url_for('static', filename='img/count-vectorizer-table.png') }}" alt="Count Vectorizer Table of Doc1 and Doc2"></p>
+                <p>Now that we vectorized the two documents, it is time to calculate its cosine similarity. <i>We will follow the formula given above.</i></p>
+                <p>To further analyze and understand the formula, we will separate the solving process for each part.</p>
+                <p style="text-align: center;"><img src="{{ url_for('static', filename='img/formula-process-cosine.png') }}" alt="Formula Process" max-width="100%" height="auto">
+                    <img src="{{ url_for('static', filename='img/cosine-result.png') }}" alt="Result" max-width="100%" height="auto"></p> 
+                <p>The result after calculating the cosine similarity of two documents is <b>0.5071.</b> The cosine similarity outputs values from 0 to 1. 1 implies 100% identical document and 0 means no similarity. Given that the result of Doc1 and Doc2 cosine similarity is 0.5071, it means that the two documents are approximately <b>51% similar to each other.</b></p>
+            </div>
+            <div>
+                <h3>Advantages of Cosine Similarity:</h3>
+                <ol>
+                    <li><b>1. Robust to Document Length:</b>
+                        <ul>
+                            <li>Cosine similarity is independent of the length of the documents <a href="#Wikipedia">[4]</a>. This is because it focuses on the relative importance of words rather than their absolute frequencies. This makes it suitable for comparing documents of different sizes, avoiding bias towards longer documents <a href="#Medium">[3]</a>.</li>
+                        </ul>
+                    </li>
+                    <li><b>2. Efficient Computation:</b> 
+                        <ul>
+                            <li>Cosine similarity can be efficiently computed, especially for sparse vectors where only a few elements have non-zero values <a href="#Wikipedia">[4]</a>. This makes it scalable for comparing large datasets of documents.</li>
+                        </ul>
+                    </li>
+                    <li><b>3. Easy Interpretation:</b> 
+                        <ul>
+                            <li>Cosine similarity produces a score between 0 and 1, where 0 represents no similarity and 1 represents perfect similarity. This makes the results easy to interpret and use for various applications <a href="#Wikipedia">[4]</a>.</li>
+                        </ul>
+                    </li>
+                    <li><b>4. Widely Used:</b> 
+                        <ul>
+                            <li>Cosine similarity is a well-established technique with numerous applications in information retrieval, text mining, natural language processing, and recommendation systems <a href="#Machine Learning Plus">[5]</a>. This vast usage provides a strong foundation for further research and development of related techniques.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
         </div>
+        <h2>Conclusion</h2>
+        <p class="cosine-intro">Cosine similarity is a powerful and versatile tool for measuring the similarity between documents. It offers several advantages, including robustness to document length, efficient computation, easy interpretation, and widespread usage. This makes it a valuable technique for various applications, including information retrieval, search engines, document clustering, recommendation systems, and more.</p>
+        <p class="cosine-intro"> With its ability to efficiently compare documents, cosine similarity promises to be a cornerstone in document analysis and information processing for years to come. Further research and development in this area will continue to enhance its capabilities and expand its applications.</p>
+        <h2>References</h2>
+        <section id="Built In"><p>[1] “Understanding Cosine Similarity and Its Application | Built In,” builtin.com. <a href="https://builtin.com/machine-learning/cosine-similarity">https://builtin.com/machine-learning/cosine-similarity</a></p></section>
+        <section id="GeeksforGeeks"><p>[2] “Using CountVectorizer to Extracting Features from Text,” GeeksforGeeks, Jul. 15, 2020. <a href="https://www.geeksforgeeks.org/using-countvectorizer-to-extracting-features-from-text/">https://www.geeksforgeeks.org/using-countvectorizer-to-extracting-features-from-text/</a></p></section>
+        <section id="Medium"><p>[3] F. Vidal, “Similarity Distances for Natural Language Processing,” Medium, Jun. 11, 2021. <a href="https://flavien-vidal.medium.com/similarity-distances-for-natural-language-processing-16f63cd5ba55">https://flavien-vidal.medium.com/similarity-distances-for-natural-language-processing-16f63cd5ba55</a></p></section>
+        <section id="Wikipedia"><p>[4] “Cosine similarity - Wikipedia,” static.hlt.bme.hu. <a href="https://static.hlt.bme.hu/semantics/external/pages/n-gram/en.wikipedia.org/wiki/Cosine_similarity.html">https://static.hlt.bme.hu/semantics/external/pages/n-gram/en.wikipedia.org/wiki/Cosine_similarity.html</a> (accessed Dec. 10, 2023).</p></section>
+        <section id="Machine Learning Plus"><p>[5] S. Prabhakaran, “Cosine Similarity – Understanding the math and how it works (with python codes),” Machine Learning Plus, Oct. 22, 2018. <a href="https://www.machinelearningplus.com/nlp/cosine-similarity/">https://www.machinelearningplus.com/nlp/cosine-similarity/</a></p></section>
     </div></center>
     <footer>
         <p>&copy; 2023 Web-Based Document Similarity Tool Using TF-IDF and Cosine Similarity Algorithm</p>
