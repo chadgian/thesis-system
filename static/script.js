@@ -624,14 +624,33 @@ function secondOption() {
                                 tCell1.innerHTML = "Empty";
                                 tCell2.innerHTML = "Empty";
                             } else {
-                                tCell1.innerHTML = result;
-                                tCell2.innerHTML = result;
+                                if (firstCounter === secondCounter){
+                                    const resultDisplay = document.createElement('p');
+                                    resultDisplay.innerHTML = result;
+                                    resultDisplay.style.color = "#cfc6c2";
+                                    resultDisplay.style.padding = "0px";
+                                    resultDisplay.style.margin = "0px";
+                                    tCell1.appendChild(resultDisplay);
+                                } else {
+                                    const resultDisplay = document.createElement('p');
+                                    resultDisplay.innerHTML = result;
+                                    resultDisplay.style.color = "#cfc6c2";
+                                    resultDisplay.style.padding = "0px";
+                                    resultDisplay.style.margin = "0px";
+                                    tCell1.appendChild(resultDisplay);
+
+                                    const resultDisplay2 = document.createElement('p');
+                                    resultDisplay2.innerHTML = result;
+                                    resultDisplay2.style.color = "#cfc6c2";
+                                    resultDisplay2.style.padding = "0px";
+                                    resultDisplay2.style.margin = "0px";
+                                    tCell2.appendChild(resultDisplay2);
+                                }
+                                
                             }
                             
                             tCell1.style.backgroundColor = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
-                            tCell1.style.color = "#051747";
                             tCell2.style.backgroundColor = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
-                            tCell2.style.color = "#051747";
                             
                             console.log(firstCounter+" vs. "+secondCounter);
                             secondCounter++;

@@ -2,20 +2,23 @@ body {
     font-family: Arial, sans-serif;
     background-color: #fefefe;
     background: rgba(255, 255, 255, 0.4) url('img/home-background.jpg') no-repeat center center fixed;
+    background-size: 100% 100%;
     margin: 0;
     padding: 0;
     color: black; /* Dark Gray Text */
 }
 .header {
-    background-color: #05174748;
+    background-color: #3d2d23;
     padding: 10px;
     padding-top: 20px;
+    padding-bottom: 20px;
     display: flex;
     justify-content: space-between; /* Align elements at opposite ends */
     align-items: center; /* Center vertically */
     padding-left: 1em;
     padding-right: 2em;
-    background: linear-gradient(to bottom, #051747 0%, #0517477a 50%, #05174700 100%);
+    background: #3d2d23;
+    background: linear-gradient(to bottom, #3d2d23 0%, #3d2d237c 50%, #3d2d2300 100%);
 }
 .header h2 {
     text-align: left;
@@ -97,9 +100,9 @@ body {
     margin: 20px auto; /* Center the container vertically */
     padding: 20px;
     /* background-color: #e7e9f0; */
-    background: #dbe4ff80;
+    background: #cfc6c2;
     border-radius: 10px;
-    box-shadow: 0 0 3px #051747;
+    box-shadow: 0 0 3px #000000;
 }
 .header h1 {
     text-align: center;
@@ -120,13 +123,13 @@ label {
     margin-bottom: 5px;
 }
 input[type="file"] {
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     padding: 10px;
     width: 40%;
     border-radius: 10px;
 }
 input[type="submit"] {
-    background-color: #535f80;
+    background-color: #463025;
     color: #ffffff;
     padding: 10px 20px;
     border: none;
@@ -135,7 +138,7 @@ input[type="submit"] {
     transition: transform 0.1s;
 }
 input[type="submit"]:hover {
-    background-color: #081f62;
+    background-color: #362419;
 }
 
 /*.uploaded-files {
@@ -156,7 +159,7 @@ input[type="submit"]:hover {
 
 .option1-container th, td {
     padding: 15px;
-    border-bottom: 1px solid #bcc2d5;
+    border-bottom: 1px solid #000000;
     background-color: #dbe4ff00;
     overflow: auto;
 /*    text-overflow: ellipsis;*/
@@ -185,7 +188,7 @@ input[type="submit"]:hover {
     border: 0px;
     padding: 0px;
     height: 2em;
-    background-color: #5180fdc7;
+    background-color: #523a31;;
     align-items: center;
     border-radius: 5px;
     position: relative;
@@ -205,14 +208,24 @@ input[type="submit"]:hover {
     width: 75%;
     min-height: 500px;
     text-align: center;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: 10px auto;
     border-radius: 10px;
     padding: 10px;
     padding-top: 25px;
-    /* box-shadow: 0 0 3px #051747; */
     background-color: #ffffff00;
 }
+.option-container img {
+    border-radius: 10px;
+    transition: transform ease 0.3s;
+    cursor: pointer;
+}
+
+.option-container img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 3px #444444;
+}
+
 .option-intro {
     display: flex;
     border-radius: 10px;
@@ -224,7 +237,7 @@ input[type="submit"]:hover {
     background: #dbe4ff80;
 }
 
-.option1-intro, .option2-intro, .option3-intro{
+/* .option1-intro, .option2-intro, .option3-intro{
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -234,7 +247,7 @@ input[type="submit"]:hover {
     margin-left: 1em;
     margin-right: 1em;
     gap: 10px;
-    background: #dbe4ff80;
+    background: #dbe4fff8;
     padding: 10px;
     padding-top: 2em;
 }
@@ -242,6 +255,11 @@ input[type="submit"]:hover {
     text-align: justify;
     line-height: 1.5;
     text-indent: 3em;
+} */
+
+.option1-intro {
+    background-image: url('img/multi-file.png');
+    background-size: 100% 100%;
 }
 .option-intro div {
     padding: 10px;
@@ -269,7 +287,7 @@ input[type="submit"]:hover {
 }
 .option-back {
     cursor: pointer;
-    background-color: #535f80;
+    background-color: #463025;
     padding: 10px;
     padding-left: 15px;
     padding-right: 15px;
@@ -280,13 +298,13 @@ input[type="submit"]:hover {
     border-radius: 20px;
 }
 .option-back:hover {
-    background-color: #081f62;
+    background-color: #362419;
 }
 .option2-container {
     width: 70%;
     margin: 20px auto; /* Center the container vertically */
     padding: 20px;
-    background-color: #dbe4ff80; /* White Container Background */
+    background-color: #cfc6c2; /* White Container Background */
     border-radius: 10px;
     box-shadow: 0 0 3px #051747;
 }
@@ -316,7 +334,7 @@ input[type="submit"]:hover {
     min-height: 100px;
     max-height: 300px;
     border-radius: 10px;
-    background-color: #dbe4ff80;
+    background-color: #afa09a;
     backdrop-filter: blur(10px);
     text-align: left;
     overflow-y: scroll;
@@ -367,7 +385,7 @@ input[type="submit"]:hover {
     width: 70%;
     margin: 20px auto; /* Center the container vertically */
     padding: 20px;
-    background-color: #dbe4ff80; /* White Container Background */
+    background-color: #cfc6c2; /* White Container Background */
     border-radius: 10px;
     box-shadow: 0 0 3px #051747;
 }
@@ -380,7 +398,7 @@ input[type="submit"]:hover {
 
 .option3-search {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
     justify-content: space-between;
     gap: 2em;
@@ -392,7 +410,7 @@ input[type="submit"]:hover {
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #dbe4ff80;
+    background-color: #afa09a;
     backdrop-filter: blur(10px);
     justify-content: center;
     overflow-y: scroll;
@@ -423,29 +441,44 @@ input[type="submit"]:hover {
     font-size: 13px;
     border: none;
     width: 50%;
-    border-bottom: 2px solid #2c3e50; /* Dark blue border */
-    border-radius: 5px;
-    background: linear-gradient(to top, #051747b2 0%, #0517477a 10%, #05174700 100%);
-    color: #ffffff; /* Light text color */
-    outline: none; /* Remove the default focus outline */
+    border: 2px solid #49352c;
+    border-radius: 25px;
+    background-color: #afa09a7a;
+    /* background: linear-gradient(to top, #051747b2 0%, #0517477a 10%, #05174700 100%); */
+    color: #000000;
+    outline: none;
+    text-align: center; 
 }
 
 /* Style for the input type text when focused */
 #keyword:focus {
-    border-color: #051747; /* Highlight border color when focused */
+    background-color: #afa09a;
+    border-color: #1b120e; /* Highlight border color when focused */
 }
 
 .cosine-body {
-    background-color: #d6ddf1;
+    /* background-color: #d6ddf1; */
+    background-color: #fff;
     margin: 20px;
-    width: 80%;
+    max-width: 80%;
     border-radius: 10px;
     padding: 20px;
     text-align: left;
 }
-.cosine-body p {
+.cosine-intro {
     font-size: 18px;
     font-style: 'Verdana', sans-serif;
     text-indent: 2em;
+    line-height: 2;
+}
+.cosine-body p {
+    margin-left: 40px;
+    font-size: 18px;
+    font-style: 'Verdana', sans-serif;
+    line-height: 2;
+}
+.cosine-body i {
+    font-size: 16px;
+    font-style: 'Verdana', sans-serif;
     line-height: 2;
 }
