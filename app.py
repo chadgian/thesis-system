@@ -10,7 +10,7 @@ from nltk import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 from pdf2image import convert_from_path
-from flask import Flask, request, render_template, render_template_string, jsonify
+from flask import Flask, request, render_template, render_template_string, jsonify, send_file
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import string
@@ -52,6 +52,11 @@ def about():
 def contactus():
     return render_template('contactus.html')
 
+@app.route('/download/<filename>', methods=['GET'])
+def download(filename):
+    print('Download: '+filename)
+    return send_file(os.path.join('files', filename), as_attachment=True)
+
 @app.route('/calculate', methods=['POST'])
 def calculate():
     if 'file' in request.files:
@@ -59,6 +64,9 @@ def calculate():
         file = request.files['file']
 
         # saving the file that will be used to compare for all files
+        if not os.path.exists('file'):
+            os.makedirs('file')
+        
         fname = 'file/' + file.filename.split('/')[-1]
         file.save(fname)
 
@@ -85,6 +93,10 @@ def calculate():
     elif 'files' in request.files:
         uploaded_files = request.files['files']
         firstDoc = request.form.get('file')
+
+        if not os.path.exists('files'):
+            os.makedirs('files')
+
         fnames = uploaded_files.filename.split('/')[-1]
         uploaded_files.save('files/'+fnames)
 
@@ -122,8 +134,13 @@ def calculate():
     elif 'documents' in request.files:
         fileArray = request.files.getlist('documents')
         validFormats = ['pdf','doc','docx','jpg','jpeg','png','gif','webp','tiff','ppm','pgm','pbm']
+
         print(fileArray)
         extractedJson = {}
+
+        if not os.path.exists('files'):
+            os.makedirs('files')
+            
         for file in fileArray:
             filename = file.filename.split('/')[-1].lower()
             fileFormat = filename.split('.')[-1]
